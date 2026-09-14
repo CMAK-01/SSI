@@ -1,0 +1,11 @@
+- [x] Mettre "Équipement concerné" en liste déroulante (create/edit rapport mensuel)
+- [x] Mettre à jour l'export Excel Rapport Mensuel avec les entêtes exactes demandées
+- [x] Rendre certains champs Parc Informatique non obligatoires (store/update + formulaire)
+- [x] Corriger les types d'équipements invalides (harmoniser valeurs formulaire/validation)
+- [x] Retirer "_" dans l'affichage des types d'équipements
+- [x] Appliquer la police Aptos globalement au projet
+- [x] Ajouter contrôle de concurrence optimiste sur update Rapport Mensuel
+- [x] Ajouter contrôle de concurrence optimiste + transaction sur update Parc Informatique
+- [x] Ajouter champ caché updated_at dans formulaires d'édition concernés
+- [ ] Tester scénario de conflit d'édition multi-postes (2 sessions)
+- [ ] Tester les pages et exports impactés
