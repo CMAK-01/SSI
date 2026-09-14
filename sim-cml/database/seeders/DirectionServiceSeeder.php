@@ -12,48 +12,71 @@ class DirectionServiceSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
-        $data = [
-            'DTAM' => [
-                'nom' => 'DTAM',
-                'services' => [
-                    'Service Maintenance Industrielle',
-                    'Service Maintenance Mécanique',
-                ],
-            ],
-            'DTARG' => [
-                'nom' => 'DTARG',
-                'services' => [
-                    'Service Géologie Minière',
-                    'Service Laboratoire',
-                ],
-            ],
-            'DTAP' => [
-                'nom' => 'DTAP',
-                'services' => [
-                    'Service Exploitation Minière',
-                    'Service Traitement',
-                ],
-            ],
-            'DAF' => [
-                'nom' => 'DAF',
-                'services' => [
-                    'Service Administration du site',
-                    'Service achat et approvisionnement',
-                    'Service Comptabilité',
-                    'Service Informatique',
-                    'Service Moyens Généraux',
-                    'Service Ressources Humaines',
-                ],
-            ],
-            'DCL' => [
-                'nom' => 'DCL',
-                'services' => [
-                    'Service Commercial et Marketing',
-                    'Service Logistique et transit',
-                ],
-            ],
-        ];
+    {$data = [
+    'DTAM' => [
+        'nom' => 'DTAM',
+        'services' => [
+            'Service DTAM',
+            'Service Maintenance Industrielle',
+            'Service Maintenance Mécanique',
+        ],
+    ],
+    'DTARG' => [
+        'nom' => 'DTARG',
+        'services' => [
+            'Service DTARG',
+            'Service Géologie Minière',
+            'Service Laboratoire',
+        ],
+    ],
+    'DTAP' => [
+        'nom' => 'DTAP',
+        'services' => [
+            'Service DTAP',
+            'Service Exploitation Minière',
+            'Service Traitement',
+        ],
+    ],
+    'DAF' => [
+        'nom' => 'DAF',
+        'services' => [
+            'Service Administration du site',
+            'Service Comptabilité',
+            'Service Gestion Financière',
+            'Service Informatique',
+        ],
+    ],
+    'DCL' => [
+        'nom' => 'DCL',
+        'services' => [
+            'Service Commercial et Marketing',
+            'Service Logistique et transit',
+        ],
+    ],
+    'DG' => [
+        'nom' => 'DG',
+        'services' => [
+            'Service DG',
+            'Service Audit et Contrôle de Gestion',
+            'Service Communication',
+        ],
+    ],
+    'DAARH' => [
+        'nom' => 'DAARH',
+        'services' => [
+            'Service Développement RH & Carrière',
+            'Service GAP/PAIE',
+            'Infirmerie',
+        ],
+    ],
+    'DAAGL' => [
+        'nom' => 'DAAGL',
+        'services' => [
+            'Service achat et approvisionnement',
+            'Service Moyens Généraux',
+        ],
+    ],
+];
 
         foreach ($data as $code => $directionData) {
             $direction = Direction::updateOrCreate(
