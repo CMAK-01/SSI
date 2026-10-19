@@ -16,5 +16,11 @@
             <p>Gestion des équipements, utilisateurs, états, notes multiples, historique et exports.</p>
             <a class="btn" href="{{ route('parc-informatiques.index') }}">Ouvrir</a>
         </div>
+
+        <div class="card">
+            <h2>Rapport de diagnostic</h2>
+            <p>Diagnostic matériel informatique : vérifications, analyses, actions correctives et exports.</p>
+            <a class="btn" href="{{ route('rapport-diagnostics.index') }}">Ouvrir</a>
+        </div>
     </div>
 @endsection

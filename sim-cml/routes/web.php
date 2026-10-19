@@ -26,3 +26,11 @@ Route::get('/parc-informatiques-export/excel', [ParcInformatiqueController::clas
     ->name('parc-informatiques.export.excel');
 Route::get('/parc-informatiques-export/pdf', [ParcInformatiqueController::class, 'exportPdf'])
     ->name('parc-informatiques.export.pdf');
+
+Route::resource('rapport-diagnostics', \App\Http\Controllers\RapportDiagnosticController::class)->except(['show']);
+Route::get('/rapport-diagnostics/{rapport_diagnostic}/pdf', [\App\Http\Controllers\RapportDiagnosticController::class, 'exportSinglePdf'])
+    ->name('rapport-diagnostics.export.single-pdf');
+Route::get('/rapport-diagnostics-export/excel', [\App\Http\Controllers\RapportDiagnosticController::class, 'exportExcel'])
+    ->name('rapport-diagnostics.export.excel');
+Route::get('/rapport-diagnostics-export/pdf', [\App\Http\Controllers\RapportDiagnosticController::class, 'exportPdf'])
+    ->name('rapport-diagnostics.export.pdf');

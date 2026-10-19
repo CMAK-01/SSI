@@ -11,6 +11,12 @@
     </style>
 </head>
 <body>
+@php($logo = \App\Support\AppLogo::base64())
+@if($logo)
+    <div style="text-align: center; margin-bottom: 8px;">
+        <img src="{{ $logo }}" alt="Logo" style="height: 60px;">
+    </div>
+@endif
 <h2>SIM-CML PARC INFORMATIQUE MINE</h2>
 
 <table>

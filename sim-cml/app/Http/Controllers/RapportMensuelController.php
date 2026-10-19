@@ -19,7 +19,9 @@ class RapportMensuelController extends Controller
 {
     public function index(Request $request)
     {
-        $query = RapportMensuel::query()->with(['direction', 'service'])->latest();
+        $query = RapportMensuel::query()->with(['direction', 'service'])
+            ->orderBy('date_intervention', 'desc')
+            ->orderBy('id', 'desc');
 
         if ($request->filled('month')) {
             $query->whereMonth('date_intervention', date('m', strtotime($request->string('month'))))
@@ -114,7 +116,9 @@ class RapportMensuelController extends Controller
 
     public function exportPdf(Request $request)
     {
-        $query = RapportMensuel::with(['direction', 'service'])->latest();
+        $query = RapportMensuel::with(['direction', 'service'])
+            ->orderBy('date_intervention', 'desc')
+            ->orderBy('id', 'desc');
 
         $from = $request->get('from');
         $to = $request->get('to');

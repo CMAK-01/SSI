@@ -40,7 +40,7 @@
             <label for="equipement_concerne">Équipement concerné</label>
             <select id="equipement_concerne" name="equipement_concerne" required>
                 <option value="">-- choisir --</option>
-                @foreach(['Laptop', 'Desktop', 'Ecran', 'Equipements reseaux', 'Onduleurs ou autres', 'Postes telephoniques'] as $equipement)
+                @foreach(['Laptop', 'Desktop', 'Ecran', 'Equipements reseaux', 'Onduleurs ou autres', 'Postes telephoniques', 'Printers', 'Téléphones portables'] as $equipement)
                     <option value="{{ $equipement }}" {{ old('equipement_concerne', $rapportMensuel->equipement_concerne) === $equipement ? 'selected' : '' }}>
                         {{ $equipement }}
                     </option>

@@ -37,6 +37,10 @@ class ConcurrencyUpdateTest extends TestCase
 
         $staleUpdatedAt = optional($rapport->updated_at)->toISOString();
 
+        // Les timestamps sont stockés à la seconde près : avancer le temps
+        // pour garantir que la mise à jour concurrente change updated_at.
+        $this->travel(1)->seconds();
+
         $rapport->update([
             'tache_effectuee' => 'Concurrent update',
         ]);
@@ -95,6 +99,10 @@ class ConcurrencyUpdateTest extends TestCase
         ]);
 
         $staleUpdatedAt = optional($item->updated_at)->toISOString();
+
+        // Les timestamps sont stockés à la seconde près : avancer le temps
+        // pour garantir que la mise à jour concurrente change updated_at.
+        $this->travel(1)->seconds();
 
         $item->update([
             'nom_materiel' => 'Materiel Concurrent',

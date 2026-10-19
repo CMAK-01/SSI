@@ -28,11 +28,15 @@
 </head>
 <body>
 <header>
+    @if(\App\Support\AppLogo::exists())
+        <img src="{{ \App\Support\AppLogo::url() }}" alt="Logo" style="height: 40px; vertical-align: middle; margin-right: 10px; background: #fff; padding: 2px 6px; border-radius: 4px;">
+    @endif
     <strong>SIM-CML</strong>
     <nav style="margin-top:8px;">
         <a href="{{ route('home') }}">Accueil</a>
         <a href="{{ route('rapport-mensuels.index') }}">Rapport mensuel</a>
         <a href="{{ route('parc-informatiques.index') }}">Parc Informatique Mine</a>
+        <a href="{{ route('rapport-diagnostics.index') }}">Rapport de diagnostic</a>
     </nav>
 </header>
 

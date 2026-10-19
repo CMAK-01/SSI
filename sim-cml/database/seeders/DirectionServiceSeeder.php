@@ -12,7 +12,8 @@ class DirectionServiceSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {$data = [
+    {
+        $data = [
     'DTAM' => [
         'nom' => 'DTAM',
         'services' => [
@@ -90,6 +91,20 @@ class DirectionServiceSeeder extends Seeder
                     []
                 );
             }
+
+            // Supprimer les services obsolètes de cette direction,
+            // uniquement s'ils ne sont référencés par aucun rapport ni équipement.
+            Service::where('direction_id', $direction->id)
+                ->whereNotIn('nom', $directionData['services'])
+                ->get()
+                ->each(function (Service $service) {
+                    $estReference = $service->rapportMensuels()->exists()
+                        || $service->parcInformatiques()->exists();
+
+                    if (!$estReference) {
+                        $service->delete();
+                    }
+                });
         }
     }
 }
